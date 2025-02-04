@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección de Pago</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <!-- Sección 1: Mensaje de Progreso -->
+        <div class="mb-6">
+            <h2 class="text-xl font-bold" id="progress-message"></h2>
+        </div>
+
+        <!-- Sección 2: Datos de Pago -->
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold">Datos de Pago</h3>
+            <p id="payment-info"></p>
+        </div>
+
+        <!-- Sección 3: Formulario de Pago -->
+        <form id="payment-form" class="space-y-4">
+            <div>
+                <label for="reference" class="block text-sm font-medium">Número de Referencia</label>
+                <input type="text" id="reference" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div>
+                <label for="bank" class="block text-sm font-medium">Banco Desde el que se Hizo</label>
+                <input type="text" id="bank" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div>
+                <label for="cedula" class="block text-sm font-medium">Cédula</label>
+                <input type="text" id="cedula" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div>
+                <label for="phone" class="block text-sm font-medium">Teléfono</label>
+                <input type="text" id="phone" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium">Captura del Pago</label>
+                <input type="file" id="payment-image" class="mt-1 block w-full border border-gray-300 rounded-md p-2" accept="image/*">
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Enviar</button>
+        </form>
+    </div>
+    <script src="payApp.js"></script>
+</body>
+</html>

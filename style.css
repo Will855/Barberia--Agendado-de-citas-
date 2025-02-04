@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* *Seccion de header* */
+.menucontainer .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menucontainer .navbar ul li a {
+    padding: 25px;
+}
+
+.menucontainer label {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menucontainer label {
+        display: block;
+    }
+}
+
+/* *menu desplegable* */
+#mobileMenu {
+    position: fixed; /* Para que aparezca por encima de todo */
+    top: 0; /* Alineado al top */
+    right: 100%; /* Fuera de la vista inicialmente */
+    width: 250px; /* Ancho del menú */
+    height: 100%; /* Altura completa */
+    background-color: #FFA500; /* Fondo naranja */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+#mobileMenu.show {
+ /* Muestra el menú al hacer clic */
+    transform: translateX(100%);
+}
+
+/* Fin del header */
+
+/* *Seccion barber* */
+ /* Estilos adicionales que no se pueden replicar con Tailwind */
+.logo {
+    width: 100px;
+    height: auto;
+}
+/* fin de la seccion */
+
+/* *main costo* */
+.barbers {
+    transition: transform 0.3s ease; /* Agrega la transición */
+}
+
+.barbers:hover {
+    transform: scale(1.2); /* Cambia 'scale' por 'transform: scale' */
+}
+/* fin de la seccion */
+
+/* *seccion general */
+
+/* fin de la seccion */
+
+/* *seccion blog */
+/* Estilos adicionales que no se pueden replicar con Tailwind */
+.blog-1, .blog-2, .blog-3 {
+    padding: 15px 55px; /* Este estilo se ha mantenido aquí si es necesario */
+}
+/* fin de la seccion */
+
+/* *footer */
+/* Estilos adicionales que no se pueden replicar con Tailwind */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+/* fin del footer */
+
+.blog-card {
+    @apply w-64 mx-2 shrink-0 snap-center;
+}
+
+@screen md {
+    .blog-card {
+        @apply w-[calc(33.33%-0.5rem)];
+    }
+}
+
+@screen lg {
+    .blog-card {
+        @apply w-[calc(25%-0.75rem)];
+    }
+}
+
+.card {
+    @apply w-64 mx-2 shrink-0 snap-center transition-transform duration-500;
+}
+
+.card {
+    @apply w-64 mx-2 shrink-0 transition-transform duration-500;
+}

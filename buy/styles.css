@@ -1,0 +1,114 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* estilos de el metodo de seleccion */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    img {
+        width: 100%;
+        border-radius: 5px 5px 0 0;  
+    }
+
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* estilos de el dialogo de confirmacion */
+
+.animate-slide-in {
+    animation: slide-in 0.5s forwards;
+}
+.animate-slide-out {
+    animation: slide-out 0.5s forwards;
+}
+@keyframes slide-in {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-out {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* Estilos del calendario */
+
+.time-slot.selected {
+    background-color: #5cb85c; /* Color verde al seleccionar */
+    color: white; /* Cambia el color del texto */
+}
+
+/* Estilos para el formulario */
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Mirko Yanez Barberia </title> 
+</head> 
+<body> 
+    <!--  -->
+    <header class="bg-cover bg-center min-h-[70vh] flex items-center relative p-20" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(./assets/fondo-header.jpg);">
+        <!-- Contenedor principal del menú -->
+        <div class="flex items-center justify-between absolute top-0 left-0 right-0 px-4 pt-6">
+            <!-- Logo de la barbería -->
+            <a href="#" class="text-gray-300 text-2xl font-extrabold">
+                <img src="./assets/logo.png" class="logo absolute top-0 left-0 p-4" alt="Logo de la barbería" srcset="">
+            </a>
+            <!-- Botón para el menú responsivo -->
+            <button id="menuButton" class="md:hidden">
+                <ion-icon name="menu-outline" class="text-white size-8"></ion-icon>
+            </button>
+            <!-- Navegación principal -->
+            <nav class="navbar hidden md:flex">
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="text-gray-300 text-lg font-medium hover:font-bold">Inicio</a></li>
+                    <li><a href="localhost/buy/barber_select.html" class="text-gray-300 text-lg font-medium hover:font-bold">Servicios</a></li>
+                    <li><a href="#" class="text-gray-300 text-lg font-medium hover:font-bold">Productos</a></li>
+                    <li><a href="#" class="text-gray-300 text-lg font-medium hover:font-bold">Acerca de nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Menú desplegable para móviles -->
+        <div id="mobileMenu" class="md:hidden hidden">
+            <nav class="flex flex-col items-center mt-4">
+                <!-- <button id="closeMenuButton" class="mb-4 text-white">Cerrar Menú</button> Botón para cerrar el menú -->
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="#" class="text-white-300 text-lg font-medium hover:font-bold">Inicio</a></li>
+                    <li><a href="./buy/barber_select.html" class="text-white-300 text-lg font-medium hover:font-bold">Servicios</a></li>
+                    <li><a href="#" class="text-white-300 text-lg font-medium hover:font-bold">Productos</a></li>
+                    <li><a href="https://www.instagram.com/mirkosybarber?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white-300 text-lg font-medium hover:font-bold">Acerca de nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Título principal de la sección -->
+        <div class="text-center text-white mx-auto mt-36 mb-24">
+            <h1 class="text-6xl uppercase mb-8 font-bold">Barbería</h1>
+            <p class="text-base px-10 mb-6">
+                Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                elit. Aperiam natus alias architecto provident <br>
+                aliquid sint numquam harum sapiente, id facere <br>
+                animi at itaque officia sequi totam dignissimos,
+                nam maxime quia!
+            </p>
+            <a href="#" class="inline-block px-8 py-3 bg-orange-500 text-white uppercase hover:bg-gray-800">Información</a>
+        </div>
+    </header>
+    <!--  -->
+    <section class="py-24 bg-gray-200 relative">
+        <!-- Imagen de fondo de la barbería -->
+        <img class="absolute top-0 right-0  logo p-4" src="/assets/logo.png" alt="Logo de la barbería">
+    
+        <div class="text-center">
+            <h2 class="text-5xl leading-[70px] text-gray-800 uppercase px-10 mb-4 font-bold">Servicios ofrecidos</h2>
+            <p class="text-base text-gray-800 px-10 mb-8">
+                En nuestra barbería, ofrecemos una variedad de servicios de cortes para satisfacer tus necesidades. <br>
+                Desde cortes clásicos hasta estilos modernos, nuestro equipo está listo para ayudarte a lucir lo mejor posible.
+            </p>
+    
+            <!-- Grupo de servicios ofrecidos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-around mb-12">
+                <!-- Servicio 1: Corte Clásico -->
+                <div class="text-center mb-8 md:mb-0 max-w-60 mx-auto">
+                    <img src="./assets/barba.jpg" alt="Corte Clásico" class="w-52 mb-4 mx-auto">
+                    <h3 class="text-gray-800 text-xl mb-3 font-bold">Corte Clásico</h3>
+                    <p class="text-justify">Un corte atemporal que se adapta a cualquier estilo. Perfecto para quienes buscan un look limpio y profesional.</p>
+                </div>
+            
+                <!-- Servicio 2: Corte de Cabello con Máquina -->
+                <div class="text-center mb-8 md:mb-0 max-w-60 mx-auto">
+                    <img src="./assets/pelo.jpg".jpg alt="Corte de Cabello con Máquina" class="w-52 mb-4 mx-auto">
+                    <h3 class="text-gray-800 text-xl mb-3 font-bold">Corte de Cabello con Máquina</h3>
+                    <p class="text-justify">Cortes precisos y uniformes utilizando máquina. Ideal para un acabado limpio y rápido.</p>
+                </div>
+            
+                <!-- Servicio 3: Servicio de Barba -->
+                <div class="text-center max-w-60 mx-auto">
+                    <img src="./assets/barba2.jpg" alt="Servicio de Barba" class="w-52 mb-4 mx-auto">
+                    <h3 class="text-gray-800 text-xl mb-3 font-bold">Servicio de Barba</h3>
+                    <p class="text-justify">Afeitado y diseño de barba para un look bien cuidado. Incluye recorte y perfilado para resaltar tus rasgos.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="inline-block px-8 py-3 bg-orange-500 text-white uppercase hover:bg-gray-800">Información</a>
+    </section>
+            
+    </section>
+    <main class="bg-cover bg-center py-24" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/assets/header2.webp);">
+        <div class="text-center container mx-auto">
+            <h2 class="text-5xl leading-[78px] text-white uppercase mb-12 font-bold">Barberos disponibles</h2>
+            <div class="flex flex-col md:flex-row justify-between mb-12 px-4">
+                <!-- Barber 1 -->
+                <div class="text-center barbers mb-8 md:mb-0">
+                    <img src="./assets/barbero3.png" alt="barbero disponible" class="w-25 mb-4 mx-auto">
+                    <h3 class="text-gray-300 text-lg font-bold">Juan</h3>
+                </div>
+                <!-- Barber 2 -->
+                <div class="text-center barbers mb-8 md:mb-0">
+                    <img src="./assets/barbero.png" alt="barbero disponible" class="w-25 mb-4 mx-auto">
+                    <h3 class="text-gray-300 text-lg font-bold">Carlos</h3>
+                </div>
+                <!-- Barber 3 -->
+                <div class="text-center barbers">
+                    <img src="./assets/barbero4.png" alt="barbero disponible" class="w-25 mb-4 mx-auto">
+                    <h3 class="text-gray-300 text-lg font-bold">Miguel</h3>
+                </div>
+            </div>
+            <p class="text-base text-gray-400 mb-12 px-10">
+                Nuestros barberos son expertos en cortes y estilos que se adaptan a tus necesidades. <br>
+                ¡No dudes en visitarnos y experimentar un servicio excepcional!
+            </p>
+            <p class="text-lg text-white mb-12 px-10">
+                ¡Agenda tu cita hoy mismo y transforma tu look con uno de nuestros talentosos barberos! 
+                <br> ¡Te esperamos para ofrecerte la mejor experiencia!
+            </p>
+            <a href="/portal de pago/barber_select.html" class="inline-block px-8 py-3 bg-orange-500 text-white uppercase hover:bg-gray-800">Agendar Cita</a>
+        </div>
+    </main>
+    
+    <section class="flex flex-col md:flex-row bg-gray-200">
+        <div>
+            <div class="general-1 w-full md:w-3/4 p-8 md:p-24 bg-gray-200">
+                <h2 class="text-5xl leading-[70px] text-gray-800 uppercase mb-5 font-bold">Calidad en Cada Corte</h2>
+                <p class="text-base text-gray-800 mb-10 text-justify">
+                    En nuestra barbería, nos enorgullecemos de utilizar los mejores productos y de más alta calidad para garantizar que cada cliente reciba un servicio excepcional. 
+                    Desde champús y acondicionadores hasta productos de styling, cada artículo ha sido seleccionado cuidadosamente para cuidar y realzar tu cabello y barba.
+                    <br><br>
+                    Nuestros barberos están capacitados para ofrecerte recomendaciones personalizadas, asegurando que encuentres los productos que mejor se adapten a tus necesidades. 
+                    Creemos que la calidad de los productos es fundamental para lograr resultados impresionantes y duraderos.
+                </p>
+                <a href="#" class="inline-block px-8 py-3 bg-orange-500 text-white uppercase hover:bg-gray-800">Más Información</a>
+            </div>      
+            
+            <div class="general-2 bg-cover bg-center w-full md:w-[13cm] h-[18cm] md:ml-6 hidden md:block" style="background-image: url(/assets/781.png);">
+                <!-- Sección adicional que puede ser utilizada más adelante -->
+            </div>
+        </div>
+        <div>
+            <div class="general-3 bg-cover bg-center w-full md:w-[13cm] h-[16cm] md:ml-6 hidden md:block" style="background-image: url(/assets/782.png);">
+                <!-- Sección adicional que puede ser utilizada más adelante -->
+            </div> 
+            
+            <div class="general-1 w-full md:w-3/4 p-8 md:p-24 bg-gray-200">
+                <h2 class="text-5xl leading-[70px] text-gray-800 uppercase mb-5 font-bold">Compromiso con la Excelencia</h2>
+                <p class="text-base text-gray-800 mb-10 text-justify">
+                    Nuestro compromiso es ofrecerte una experiencia de barbería que no solo cumpla, sino que supere tus expectativas. 
+                    Utilizamos productos que son **libres de sulfatos y parabenos**, asegurando que tu cabello y piel reciban el mejor cuidado posible. 
+                    <br><br>
+                    Ven y descubre la diferencia que hacen los productos de calidad en tu rutina de cuidado personal. ¡Te esperamos!
+                </p>
+                <a href="#" class="inline-block px-8 py-3 bg-orange-500 text-white uppercase hover:bg-gray-800">Más Información</a>
+            </div> 
+        </div>
+    </section>
+    
+    <section class="py-24 text-center"a>    <h2 class="text-5xl mb-8 font-bold text-center">Blog ✂️</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="card-container">
+            <!-- Las tarjetas se generarán aquí dinámicamente -->
+        </div>
+    </section>
+
+    <footer class="bg-black py-24">
+        <div class="container mx-auto flex flex-row flex-wrap gap-20 justify-between footer-content">
+            
+            <div class="flex mx-auto gap-12">
+                <!-- Sección de Servicios -->
+            <div class="link mb-8 md:mb-0">
+                <h3 class="text-lg text-gray-300 mb-4 font-bold">Servicios</h3>
+                <ul>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Corte de Cabello</a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Afeitado Clásico</a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Corte de Barba</a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Tratamientos Capilares</a></li>
+                </ul>
+            </div>
+            
+            <!-- Sección de Contacto -->
+            <div class="link mb-8 md:mb-0">
+                <h3 class="text-lg text-gray-300 mb-4 font-bold text-center">Contacto</h3>
+                <ul>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Teléfono: (123) 456-7890</a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Email: info@barberiaxyz.com</a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Dirección: Calle Falsa 123, Ciudad</a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Horario: Lunes a Sábado, 9 AM - 7 PM</a></li>
+                </ul>
+            </div>
+            
+            <!-- Sección de Redes Sociales -->
+            <div class="link">
+                <h3 class="text-lg text-gray-300 mb-4 font-bold text-center">Síguenos</h3>
+                <ul> class="p-2"
+                    <li><a href="#" class="text-gray-300 mb-3 block">Facebook<ion-icon  name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Instagram<ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">Twitter<ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="#" class="text-gray-300 mb-3 block">TikTok<ion-icon name="logo-tiktok"></ion-icon></a></li>
+                
+            </div>            
+            </div>
+            <!-- Sección de Información -->
+            <div class="link mb-8 md:mb-0 mx-auto">
+                <h3 class="text-lg text-gray-300 mb-4 font-bold text-center">Sobre Nosotros</h3>
+                <p class="text-gray-300">En Barbería XYZ, ofrecemos cortes de cabello y afeitados de alta calidad en un ambiente relajante. Nuestro equipo de expertos está listo para atenderte.</p>
+            </div>
+        </div>
+    </footer>
+</body> 
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="app.js"></script>
+</html>
