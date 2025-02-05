@@ -13,17 +13,17 @@
     
         <h2 class="text-xl font-semibold mb-4">Selecciona un Barbero</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-            <div class="card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Juan')">
+            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Juan')">
                 <img src="../assets/barbero.png" alt="Juan" class="w-full rounded-t-lg mb-2">
                 <h2 class="font-semibold">Juan</h2>
                 <p>Experto en cortes clásicos y modernos.</p>
             </div>
-            <div class="card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Carlos')">
+            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Carlos')">
                 <img src="../assets//barbero3.png" alt="Carlos" class="w-full rounded-t-lg mb-2">
                 <h2 class="font-semibold">Carlos</h2>
                 <p>Especialista en diseño de barbas y estilos personalizados.</p>
             </div>
-            <div class="card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Miguel')">
+            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Miguel')">
                 <img src="../assets/barbero4.png" alt="Miguel" class="w-full rounded-t-lg mb-2">
                 <h2 class="font-semibold">Miguel</h2>
                 <p>Combina técnicas tradicionales con tendencias modernas.</p>
@@ -32,17 +32,17 @@
     
         <h2 class="text-xl font-semibold mb-4">Selecciona un Tipo de Corte</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-            <div class="card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectCut('Corte Clásico', 20)">
+            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectCut('Corte Clásico', 20)">
                 <h2 class="font-semibold">Corte Clásico</h2>
                 <p>Un estilo atemporal solo para cabello.</p>
                 <p>Precio: $20</p>
             </div>
-            <div class="card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg"> 
+            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectCut('Corte Barba', 15)"> 
                 <h2 class="font-semibold">Corte de Barba</h2>
                 <p>Diseño y recorte de barba.</p>
                 <p>Precio: $15</p>
             </div>
-            <div class="card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectCut('Corte Completo', 30)">
+            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectCut('Corte Completo', 30)">
                 <h2 class="font-semibold">Corte Completo</h2>
                 <p>Cabello y barba para un look completo.</p>
                 <p>Precio: $30</p>
@@ -51,14 +51,14 @@
         
         <h2 class="text-xl font-semibold mb-4">Selecciona un Horario</h2>
         <div id="time-selection" class="grid grid-cols-4 gap-4 mt-5">
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime(1)">1:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime(2)">2:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime(3)">3:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime(4)">4:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime(5)">5:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime(6)">6:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime(7)">7:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime(8)">8:00</div>
+            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('1')">1:00</div>
+            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('2')">2:00</div>
+            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('3')">3:00</div>
+            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('4')">4:00</div>
+            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('5')">5:00</div>
+            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('6')">6:00</div>
+            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('7')">7:00</div>
+            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('8')">8:00</div>
         </div>
     </div>
 

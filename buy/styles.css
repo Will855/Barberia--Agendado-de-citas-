@@ -1,44 +1,70 @@
 /* styles.css */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
 }
 
-/* estilos de el metodo de seleccion */
 .container {
-    max-width: 800px;
+    max-width: 100%;
     margin: auto;
     background: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    text-align: center;
+.card {
+    padding: 8px;
+    margin-bottom: 12px;
 }
 
-.card {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    padding: 10px;
-    cursor: pointer;
-    transition: border-color 0.3s, box-shadow 0.3s;
+.time-slot {
+    padding: 12px !important;
+    font-size: 0.9rem;
+}
 
-    img {
-        width: 100%;
-        border-radius: 5px 5px 0 0;  
+#time-selection {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 460px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+    
+    .card {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
     }
 
+    input, select {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    #mobileMenu {
+        width: 100vw;
+    }
+
+    .grid-responsive {
+        gap: 0.8rem;
+    }
 }
 
-.card:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+@media (max-width: 360px) {
+    #time-selection {
+        grid-template-columns: 1fr;
+    }
+    
+    .time-slot {
+        padding: 10px !important;
+    }
 }
 
 /* estilos de el dialogo de confirmacion */
