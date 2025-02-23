@@ -1,7 +1,7 @@
 // Obtiene los elementos del DOM
 const menuButtonOpen = document.getElementById('open-btn');
 const menuButtonClose = document.querySelector('.close-btn');
-const mobileMenu = document.getElementById('mobileMenu');
+
 
 // Función para mostrar el menú
 const showMenu = () => {

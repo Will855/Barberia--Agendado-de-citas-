@@ -55,17 +55,16 @@ body {
 #mobileMenu {
     position: fixed;
     top: 0;
-    right: -100%;
     width: 80vw;
     height: 100vh;
     background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     overflow-y: auto;
+    /* Agregamos la transición para animar el cambio de posición */
+    transition: right 0.5s ease-in-out;
 }
-
 
 #mobileMenu.show {
     right: 0;

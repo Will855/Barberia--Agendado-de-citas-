@@ -1,104 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Cita con Barbero</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-gray-100 p-5">
     <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 class="text-2xl font-bold text-center mb-6">Agendar Cita</h1>
-    
+
         <h2 class="text-xl font-semibold mb-4">Selecciona un Barbero</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Juan')">
+            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg"
+                onclick="selectBarber('Juan')">
                 <img src="../assets/barbero.png" alt="Juan" class="w-full rounded-t-lg mb-2">
                 <h2 class="font-semibold">Juan</h2>
                 <p>Experto en cortes clásicos y modernos.</p>
             </div>
-            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Carlos')">
+            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg"
+                onclick="selectBarber('Carlos')">
                 <img src="../assets//barbero3.png" alt="Carlos" class="w-full rounded-t-lg mb-2">
                 <h2 class="font-semibold">Carlos</h2>
                 <p>Especialista en diseño de barbas y estilos personalizados.</p>
             </div>
-            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectBarber('Miguel')">
+            <div class="card barber-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg"
+                onclick="selectBarber('Miguel')">
                 <img src="../assets/barbero4.png" alt="Miguel" class="w-full rounded-t-lg mb-2">
                 <h2 class="font-semibold">Miguel</h2>
                 <p>Combina técnicas tradicionales con tendencias modernas.</p>
             </div>
         </div>
-    
+
         <h2 class="text-xl font-semibold mb-4">Selecciona un Tipo de Corte</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectCut('Corte Clásico', 20)">
+            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg"
+                onclick="selectCut('Corte Clásico', 20)">
                 <h2 class="font-semibold">Corte Clásico</h2>
                 <p>Un estilo atemporal solo para cabello.</p>
                 <p>Precio: $20</p>
             </div>
-            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectCut('Corte Barba', 15)"> 
+            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg"
+                onclick="selectCut('Corte Barba', 15)">
                 <h2 class="font-semibold">Corte de Barba</h2>
                 <p>Diseño y recorte de barba.</p>
                 <p>Precio: $15</p>
             </div>
-            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg" onclick="selectCut('Corte Completo', 30)">
+            <div class="card cut-card bg-white border border-gray-300 rounded-lg text-center p-4 cursor-pointer hover:shadow-lg"
+                onclick="selectCut('Corte Completo', 30)">
                 <h2 class="font-semibold">Corte Completo</h2>
                 <p>Cabello y barba para un look completo.</p>
                 <p>Precio: $30</p>
             </div>
         </div>
-        
-        <h2 class="text-xl font-semibold mb-4">Selecciona un Horario</h2>
-        <div id="time-selection" class="grid grid-cols-4 gap-4 mt-5">
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('1')">1:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('2')">2:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('3')">3:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('4')">4:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('5')">5:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('6')">6:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('7')">7:00</div>
-            <div class="time-slot px-12 bg-gray-200 border border-gray-300 text-center p-5 cursor-pointer transition duration-300 hover:bg-gray-300" onclick="selectTime('8')">8:00</div>
+
+        <div class="max-w-lg mx-auto p-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Selecciona un Horario</h2>
+            <div id="time-selection" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="time-slot bg-gray-100 border border-gray-300 text-center py-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:bg-orange-200 hover:scale-105"
+                    onclick="selectTime('1')">1:00</div>
+                <div class="time-slot bg-gray-100 border border-gray-300 text-center py-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:bg-orange-200 hover:scale-105"
+                    onclick="selectTime('2')">2:00</div>
+                <div class="time-slot bg-gray-100 border border-gray-300 text-center py-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:bg-orange-200 hover:scale-105"
+                    onclick="selectTime('3')">3:00</div>
+                <div class="time-slot bg-gray-100 border border-gray-300 text-center py-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:bg-orange-200 hover:scale-105"
+                    onclick="selectTime('4')">4:00</div>
+                <div class="time-slot bg-gray-100 border border-gray-300 text-center py-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:bg-orange-200 hover:scale-105"
+                    onclick="selectTime('5')">5:00</div>
+                <div class="time-slot bg-gray-100 border border-gray-300 text-center py-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:bg-orange-200 hover:scale-105"
+                    onclick="selectTime('6')">6:00</div>
+                <div class="time-slot bg-gray-100 border border-gray-300 text-center py-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:bg-orange-200 hover:scale-105"
+                    onclick="selectTime('7')">7:00</div>
+                <div class="time-slot bg-gray-100 border border-gray-300 text-center py-4 rounded-lg shadow-sm cursor-pointer transition duration-300 hover:bg-orange-200 hover:scale-105"
+                    onclick="selectTime('8')">8:00</div>
+            </div>
         </div>
     </div>
 
-        <!-- 
-            grid: Define un contenedor de cuadrícula.
-            grid-cols-4: Establece 4 columnas en la cuadrícula.
-            gap-4: Añade un espacio de 1rem entre los elementos de la cuadrícula.
-            mt-5: Añade un margen superior.
-            bg-gray-200: Establece un color de fondo gris claro para los slots.
-            border border-gray-300: Añade un borde gris claro a los slots.
-            text-center: Centra el texto dentro de los slots.
-            p-5: Añade un padding de 1.25rem.
-            cursor-pointer: Cambia el cursor al pasar sobre el slot.
-            transition duration-300: Añade una transición suave de 300ms para los cambios de fondo.
-            hover:bg-gray-300: Cambia el color de fondo al pasar el mouse.
-        -->
+    <div id="total-display" class="total-display mt-5 text-center text-lg font-bold"></div>
 
-        <div id="total-display" class="total-display mt-5 text-center text-lg font-bold"></div>
+    <div id="selection-message"
+        class="hidden fixed top-0 left-0 right-0 mx-auto max-w-md bg-green-500 text-white text-center p-4 mt-4 rounded-lg z-50">
+    </div>
 
-        <div id="selection-message" class="hidden fixed top-0 left-0 right-0 mx-auto max-w-md bg-green-500 text-white text-center p-4 mt-4 rounded-lg z-50"></div>
+    <form id="appointmentForm" class="max-w-2xl mx-auto">
+        <p id="priceDisplay" class="text-center mb-4"></p>
 
-        <form id="appointmentForm" class="max-w-2xl mx-auto">
-            <p id="priceDisplay" class="text-center mb-4"></p>
+        <label for="name" class="block mb-1">Nombre Completo:</label>
+        <input type="text" id="name" required class="w-full p-2 border border-gray-300 rounded mb-4">
 
-            <label for="name" class="block mb-1">Nombre Completo:</label>
-            <input type="text" id="name" required class="w-full p-2 border border-gray-300 rounded mb-4">
+        <label for="phone" class="block mb-1">Número de Teléfono:</label>
+        <input type="tel" id="phone" required class="w-full p-2 border border-gray-300 rounded mb-4">
 
-            <label for="phone" class="block mb-1">Número de Teléfono:</label>
-            <input type="tel" id="phone" required class="w-full p-2 border border-gray-300 rounded mb-4">
+        <label for="paymentMethod" class="block mb-1">Método de Pago:</label>
+        <select id="paymentMethod" required class="w-full p-2 border border-gray-300 rounded mb-4">
+            <option value="efectivo">Efectivo</option>
+            <option value="movil">Pago Móvil</option>
+        </select>
 
-            <label for="paymentMethod" class="block mb-1">Método de Pago:</label>
-            <select id="paymentMethod" required class="w-full p-2 border border-gray-300 rounded mb-4">
-                <option value="efectivo">Efectivo</option>
-                <option value="movil">Pago Móvil</option>
-            </select>
-
-            <button type="button" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600" id="sendForm">Agendar Cita</button>
-        </form>
+        <button type="button" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600"
+            id="sendForm">Agendar Cita</button>
+    </form>
     </div>
 
     <script src="agenderApp.js"></script>
 </body>
+
 </html>
