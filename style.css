@@ -239,13 +239,6 @@ footer ion-icon:hover {
         /* Menor margen vertical */
     }
 
-    /* .footer-content {
-        gap: 1rem;
-        Reducir espacio entre columnas 
-        padding: 1rem 0;
-        Menor padding vertical 
-    } */
-
     .img-responsive {
         max-width: 300px;
         /* Imágenes más pequeñas */
