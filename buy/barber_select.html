@@ -36,8 +36,22 @@
                         <h3 class="secondary-font text-xl font-semibold">Juan Pérez</h3>
                         <p class="text-gray-400">Especialista en estilos clásicos</p>
                     </div>
-                    <!-- Repetir para más barberos -->
-                </div>
+                    <div class="space-y-4">
+                        <div class="barber-card bg-[#222222] p-6 rounded-lg border-2 border-transparent hover:border-amber-600"
+                            onclick="selectBarber('Carlos Gomez')">
+                            <img src="barber2.jpg" alt="Barbero 1" class="w-full h-48 object-cover rounded mb-4">
+                            <h3 class="secondary-font text-xl font-semibold">Carlos Gómez</h3>
+                            <p class="text-gray-400">Maestro en tecnicas modernas</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="barber-card bg-[#222222] p-6 rounded-lg border-2 border-transparent hover:border-amber-600"
+                                onclick="selectBarber('Miguel Rodríguez')">
+                                <img src="barber3.jpg" alt="Barbero 1" class="w-full h-48 object-cover rounded mb-4">
+                                <h3 class="secondary-font text-xl font-semibold">Miguel Rodríguez</h3>
+                                <p class="text-gray-400">Experto en diseño de barbas</p>
+                            </div>
+                            <!-- Repetir para más barberos -->
+                        </div>
             </section>
 
             <!-- Añadir en index.html (sección después de barberos) -->
@@ -45,15 +59,20 @@
                 <h2 class="gm-font text-3xl mb-6 text-amber-600">TIPO DE CORTE</h2>
                 <div class="grid grid-cols-2 gap-3">
                     <div class="cut-card bg-[#222222] p-4 rounded-lg border-2 border-transparent hover:border-amber-600 cursor-pointer"
-                        onclick="selectCut('Clásico', 300)">
+                        onclick="selectCut('Clásico', 20)">
                         <h3 class="secondary-font text-lg">Corte Clásico</h3>
-                        <p class="text-amber-600">300 BsD</p>
+                        <p class="text-amber-600">20 $</p>
                     </div>
                     <div class="cut-card bg-[#222222] p-4 rounded-lg border-2 border-transparent hover:border-amber-600 cursor-pointer"
-                        onclick="selectCut('Premium', 500)">
-                        <h3 class="secondary-font text-lg">Corte Premium</h3>
-                        <p class="text-amber-600">500 BsD</p>
+                        onclick="selectCut('Maquina', 15)">
+                        <h3 class="secondary-font text-lg">Corte con maquina</h3>
+                        <p class="text-amber-600">15 $</p>
                     </div>
+                    <div class="cut-card bg-[#222222] p-4 rounded-lg border-2 border-transparent hover:border-amber-600 cursor-pointer"
+                    onclick="selectCut('Estilizado de barba', 10)">
+                    <h3 class="secondary-font text-lg">Estilizado de barba</h3>
+                    <p class="text-amber-600">10 $</p>
+                </div>
                 </div>
             </section>
 

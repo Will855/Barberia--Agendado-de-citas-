@@ -15,7 +15,7 @@ class Appointment {
     }
 
     getTotalInBolivares() {
-        return (this.price * 53.85).toFixed(2);
+        return (this.price * 50).toFixed(2);
     }
 
     getDetails() {

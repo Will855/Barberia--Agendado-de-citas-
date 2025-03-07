@@ -11,7 +11,7 @@ const paymentInfo = `
     Banco: (0102) Venezuela
     Teléfono: 04263940038
     Cédula: 28700809
-    Monto a Pagar: ${price}$ / ${price * 53.85}Bs.
+    Monto a Pagar: ${price}$ / ${price * 50}Bs.
 `; // Crea un string con la información de pago, incluyendo el monto en dólares y su equivalente en bolívares
 document.getElementById('payment-info').innerText = paymentInfo; // Muestra la información de pago en el contenedor correspondiente
 
