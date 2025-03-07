@@ -1,20 +1,42 @@
-// Obtiene los elementos del DOM
-const menuButtonOpen = document.getElementById('open-btn');
-const menuButtonClose = document.querySelector('.close-btn');
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuIcon = document.querySelector('.menu-icon');
 
+menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle('open');
+    menuIcon.classList.toggle('open');
+});
 
-// Función para mostrar el menú
-const showMenu = () => {
-    mobileMenu.classList.remove('hidden');
-    mobileMenu.classList.add('show');
-};
+// Cerrar menú al hacer clic fuera
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        menuIcon.classList.remove('open');
+    }
+});
 
-// Función para ocultar el menú
-const hideMenu = () => {
-    mobileMenu.classList.remove('show');
-    mobileMenu.classList.add('hidden');
-};
+// Cerrar menú al cambiar tamaño de pantalla
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        mobileMenu.classList.remove('open');
+        menuIcon.classList.remove('open');
+    }
+});
 
-// Añade los eventos a los botones
-menuButtonOpen.addEventListener('click', showMenu);
-menuButtonClose.addEventListener('click', hideMenu);
+//formulario
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Mostrar notificación
+    const notification = document.getElementById('successMessage');
+    notification.classList.remove('hidden');
+
+    // Ocultar después de 3 segundos
+    setTimeout(() => {
+        notification.classList.add('hidden');
+    }, 3000);
+
+    // Resetear formulario
+    this.reset();
+});

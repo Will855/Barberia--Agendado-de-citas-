@@ -1,50 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sección de Pago</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>GM Studio - Confirmación de Pago</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 p-6">
 
-    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <!-- Sección 1: Mensaje de Progreso -->
-        <div class="mb-6">
-            <h2 class="text-xl font-bold" id="progress-message"></h2>
+<body class="bg-[#171717]">
+    <!-- Barra de navegación -->
+    <nav class="fixed w-full bg-black/80 backdrop-blur-sm z-50 py-3">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="gm-font text-2xl text-white">
+                    <a href="../index.html">
+                        <span>GM</span>
+                    <span class="text-amber-600">_STUDIO</span>
+                    </a>
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <!-- Sección 2: Datos de Pago -->
-        <div class="mb-6">
-            <h3 class="text-lg font-semibold">Datos de Pago</h3>
-            <p id="payment-info"></p>
+    <!-- Contenido principal -->
+    <main class="payment-bg flex items-center pt-20">
+        <div class="max-w-2xl mx-auto p-6 w-full">
+            <div class="bg-black/80 backdrop-blur-sm rounded-lg p-8 border gold-border">
+                <!-- Encabezado -->
+                <div class="mb-8 text-center">
+                    <h2 class="gm-font text-3xl text-white uppercase mb-4" id="progress-message"></h2>
+                    <div class="h-1 bg-amber-600 w-24 mx-auto"></div>
+                </div>
+
+                <!-- Información de pago -->
+                <div class="secondary-font text-white mb-8 space-y-4 text-center">
+                    <h3 class="text-xl uppercase tracking-wide text-amber-600">Datos de Transferencia</h3>
+                    <pre id="payment-info" class="text-gray-300 leading-relaxed"></pre>
+                </div>
+
+                <!-- Formulario -->
+                <form id="payment-form" class="space-y-6 secondary-font">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm text-gray-400 uppercase mb-2">Número de Referencia</label>
+                            <input type="text" required
+                                class="w-full bg-gray-900 border border-gray-700 rounded-none p-3 text-white focus:outline-none focus:border-amber-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 uppercase mb-2">Banco Emisor</label>
+                            <input type="text" required
+                                class="w-full bg-gray-900 border border-gray-700 rounded-none p-3 text-white focus:outline-none focus:border-amber-600">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm text-gray-400 uppercase mb-2">Cédula</label>
+                            <input type="text" required
+                                class="w-full bg-gray-900 border border-gray-700 rounded-none p-3 text-white focus:outline-none focus:border-amber-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 uppercase mb-2">Teléfono</label>
+                            <input type="text" required
+                                class="w-full bg-gray-900 border border-gray-700 rounded-none p-3 text-white focus:outline-none focus:border-amber-600">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-gray-400 uppercase mb-2">Captura del Pago</label>
+                        <input type="file" accept="image/*"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-none p-3 text-white file:mr-4 file:py-2 file:px-4 file:bg-amber-600 file:border-0 file:text-black file:secondary-font">
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-amber-600 text-black py-4 gm-font uppercase tracking-wide hover:bg-amber-700 transition-colors">
+                        CONFIRMAR PAGO
+                    </button>
+                </form>
+            </div>
         </div>
+    </main>
 
-        <!-- Sección 3: Formulario de Pago -->
-        <form id="payment-form" class="space-y-4">
-            <div>
-                <label for="reference" class="block text-sm font-medium">Número de Referencia</label>
-                <input type="text" id="reference" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
-            </div>
-            <div>
-                <label for="bank" class="block text-sm font-medium">Banco Desde el que se Hizo</label>
-                <input type="text" id="bank" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
-            </div>
-            <div>
-                <label for="cedula" class="block text-sm font-medium">Cédula</label>
-                <input type="text" id="cedula" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
-            </div>
-            <div>
-                <label for="phone" class="block text-sm font-medium">Teléfono</label>
-                <input type="text" id="phone" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
-            </div>
-            <div>
-                <label class="block text-sm font-medium">Captura del Pago</label>
-                <input type="file" id="payment-image" class="mt-1 block w-full border border-gray-300 rounded-md p-2" accept="image/*">
-            </div>
-            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Enviar</button>
-        </form>
-    </div>
     <script src="payApp.js"></script>
 </body>
+
 </html>

@@ -8,218 +8,226 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>EliteCuts</title>
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <!-- Cabecera principal -->
-    <header class="bg-cover bg-center min-h-[70vh] flex items-center relative p-20" style="
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-        ),
-        url(./assets/fondo-header.jpg);
-        ">
-        <!-- Navegación principal -->
-        <nav class="flex items-center justify-between absolute top-0 left-0 right-0 px-4 pt-6"
-            aria-label="Navegación principal">
-            <a href="#" class="text-gray-300 text-2xl font-extrabold">
-                <img src="assets/logo.png" class="logo absolute top-0 left-0 p-4" alt="Logo de la barbería" width="100"
-                    height="60" />
-            </a>
-<!-- revisar  -->
-            <button class="md:hidden" id="open-btn" aria-expanded="false" aria-controls="mobileMenu">
-                <ion-icon name="menu-outline" class="text-white size-8" aria-hidden="true"></ion-icon>
-                <span class="sr-only">Menú móvil</span>
-            </button>
+    <!-- Barra de navegación fija -->
+    <nav class="fixed w-full bg-black/80 backdrop-blur-sm z-50 py-3">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="gm-font text-2xl text-white">
+                    <a href="./index.html">
+                        <span>GM</span>
+                    <span class="text-amber-600">_STUDIO</span>
+                    </a>
+                </div>
 
-            <!-- Navegación desktop -->
-            <ul class="navbar hidden md:flex space-x-6" role="menubar">
-                <li role="none">
-                    <a href="#inicio" class="text-gray-300 text-lg font-medium hover:font-bold"
-                        role="menuitem">Inicio</a>
-                </li>
-                <li role="none">
-                    <a href="buy/barber_select.html" class="text-gray-300 text-lg font-medium hover:font-bold"
-                        role="menuitem">Agendar</a>
-                </li>
-                <li role="none">
-                    <a href="#productos" class="text-gray-300 text-lg font-medium hover:font-bold"
-                        role="menuitem">Productos</a>
-                </li>
-                <li role="none">
-                    <a href="#acerca" class="text-gray-300 text-lg font-medium hover:font-bold" role="menuitem">Acerca
-                        de nosotros</a>
-                </li>
-            </ul>
-        </nav>
+                <!-- Menú desktop -->
+                <div class="hidden md:flex secondary-font space-x-6 text-white/90">
+                    <a href="#servicios" class="hover:text-amber-600 transition-colors">SERVICIOS</a>
+                    <a href="#barberos" class="hover:text-amber-600 transition-colors">BARBEROS</a>
+                    <a href="#contacto" class="hover:text-amber-600 transition-colors">CONTACTANOS</a>
+                    <a href="./buy/barber_select.html" class="nav-active hover:bg-amber-700 transition-colors">AGENDAR</a>
+                </div>
 
-        <nav id="mobileMenu" class="md:hidden hidden" aria-label="Navegación móvil">
-            <button class="close-btn" aria-label="Cerrar menú">×</button>
-            <ul class="flex flex-col space-y-4" role="menu">
-                <li role="none">
-                    <a href="#" class="text-white text-lg font-medium" role="menuitem">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        </svg>
-                        Inicio
-                    </a>
-                </li>
-                <li role="none">
-                    <a href="buy/barber_select.html" class="text-white text-lg font-medium" role="menuitem">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                        Agendar Cita
-                    </a>
-                </li>
-                <li role="none">
-                    <a href="#" class="text-white text-lg font-medium" role="menuitem">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-                        </svg>
-                        Productos
-                    </a>
-                </li>
-                <li role="none">
-                    <a href="#" class="text-white text-lg font-medium"
-                        role="menuitem" target="_blank" rel="noopener noreferrer">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 20h5v-8a2 2 0 00-2-2h-3M7 20H2v-8a2 2 0 012-2h3m5 4v6m4-6v6m1-10a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        Acerca de nosotros
-                        <span class="text-sm ml-1">↗</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- Contenido principal del encabezado -->
-        <section class="text-center text-white mx-auto mt-36 mb-24" id="inicio">
-            <h1 class="text-6xl uppercase mb-8 font-bold">Barbería Profesional</h1>
-            <p class="text-base px-10 mb-6">
-                Experiencia y tradición en cada corte.<br />
-                Servicios premium para caballeros exigentes.<br />
-                Estilismo clásico y contemporáneo.
-            </p>
-            <a href="#servicios" class="inline-block px-8 py-3 bg-orange-500 text-white uppercase hover:bg-gray-800">Ver
-                servicios</a>
-        </section>
+                <!-- Botón hamburguesa móvil con Font Awesome -->
+                <button id="menuBtn" class="md:hidden text-white">
+                    <i class="menu-icon fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú móvil superpuesto -->
+    <div id="mobileMenu" class="mobile-menu fixed bg-black/95 backdrop-blur-lg w-full z-40 py-8 shadow-xl">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col items-center space-y-6 secondary-font text-white/90 text-lg">
+                <a href="#servicios" class="hover:text-amber-600 transition-colors">SERVICIOS</a>
+                <a href="#barberos" class="hover:text-amber-600 transition-colors">BARBEROS</a>
+                <a href="#contacto" class="hover:text-amber-600 transition-colors">CONTACTANOS</a>
+                <a href="./buy/barber_select.html" class="nav-active hover:bg-amber-700 transition-colors">AGENDAR</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Hero -->
+    <header class="hero-section flex items-center justify-center">
+        <div class="text-center text-white max-w-4xl px-4">
+            <h3 class="secondary-font uppercase tracking-[0.3em] text-amber-600 mb-6">
+                Barbería Profesional
+            </h3>
+            <h1 class="gm-font text-5xl md:text-7xl uppercase leading-tight mb-8">
+                Experiencia y tradición<br>en cada corte
+            </h1>
+            <div class="secondary-font space-y-4 text-xl text-gray-300">
+                <p>Servicios premium para caballeros exigentes</p>
+                <p>Estilismo clásico y contemporáneo</p>
+            </div>
+        </div>
     </header>
 
-    <!-- Sección de servicios -->
-    <section class="py-24 bg-slate-200 relative" id="servicios">
-        <img
-            class="absolute top-0 right-0 logo p-4 w-16 md:w-20"
-            src="assets/logo.png"
-            alt="Logo decorativo"
-            loading="lazy"
-            aria-hidden="true"
-        />
-    
-        <article class="text-center max-w-4xl mx-auto px-6">
-            <h2 class="text-5xl leading-tight text-gray-800 uppercase mb-4 font-extrabold tracking-wide">
-                Nuestros Servicios
-            </h2>
-            <p class="text-lg text-gray-600 mb-12">
-                Tradición y modernidad en cada detalle...
-            </p>
-    
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <!-- Servicio 1 -->
-                <article
-                    class="service-card text-center p-6 shadow-lg rounded-lg transform transition duration-300 hover:scale-105 bg-slate-200"
-                    aria-label="Corte Clásico"
-                >
-                    <img
-                        src="assets/barba.jpg"
-                        alt="Corte Clásico"
-                        class="w-40 h-40 object-cover rounded-full mx-auto mb-4"
-                        loading="lazy"
-                    />
-                    <h3 class="text-gray-800 text-xl font-bold mb-3">Corte Clásico</h3>
-                    <p class="text-gray-600">
-                        Técnicas tradicionales para un look elegante y atemporal.
-                    </p>
-                </article>
-    
-                <!-- Servicio 2 -->
-                <article
-                    class="service-card text-center p-6 shadow-lg rounded-lg transform transition duration-300 hover:scale-105 bg-slate-200"
-                    aria-label="Corte con Máquina"
-                >
-                    <img
-                        src="assets/pelo.jpg"
-                        alt="Corte con Máquina"
-                        class="w-40 h-40 object-cover rounded-full mx-auto mb-4"
-                        loading="lazy"
-                    />
-                    <h3 class="text-gray-800 text-xl font-bold mb-3">Corte con Máquina</h3>
-                    <p class="text-gray-600">
-                        Precisión y uniformidad en cada detalle.
-                    </p>
-                </article>
-    
-                <!-- Servicio 3 -->
-                <article
-                    class="service-card text-center p-6 shadow-lg rounded-lg transform transition duration-300 hover:scale-105 bg-slate-200"
-                    aria-label="Estilizado de Barba"
-                >
-                    <img
-                        src="assets/barba2.jpg"
-                        alt="Estilizado de Barba"
-                        class="w-40 h-40 object-cover rounded-full mx-auto mb-4"
-                        loading="lazy"
-                    />
-                    <h3 class="text-gray-800 text-xl font-bold mb-3">Estilizado de Barba</h3>
-                    <p class="text-gray-600">
-                        Diseño profesional para resaltar tu personalidad.
-                    </p>
-                </article>
+    <!-- ! Servicios -->
+    <section class="max-w-4xl mx-auto px-4 py-12 md:py-20">
+        <!-- Encabezado estilo original -->
+        <div class="barber-title text-center mb-12">
+            <h2 class="text-4xl uppercase tracking-wide mb-4">PRECIOS Y SERVICIOS</h2>
+            <div class="h-1 bg-black w-24 mx-auto"></div>
+        </div>
+
+        <!-- Listado de servicios -->
+        <div class="barber-text space-y-8">
+            <!-- Sección Cortes -->
+            <div>
+                <h3 class="text-2xl uppercase font-bold mb-6">CORTES</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg">CORTE CON MÁQUINA</span>
+                        <span class="font-bold text-xl">300</span>
+                    </div>
+                    <div class="service-divider"></div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg">CORTE CLÁSICO</span>
+                        <span class="font-bold text-xl">240</span>
+                    </div>
+                    <div class="service-divider"></div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg">ESTILIZADO DE BARBA</span>
+                        <span class="font-bold text-xl">210</span>
+                    </div>
+                </div>
             </div>
-        </article>
+
+            <!-- Sección Detalles estilo original -->
+            <div class="mt-16 text-center space-y-6">
+                <div class="space-y-2">
+                    <p class="text-3xl font-bold">10</p>
+                    <p class="uppercase text-sm">PAÍSES</p>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-3xl font-bold">2000+</p>
+                    <p class="uppercase text-sm">RESEÑAS POSITIVAS</p>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-3xl font-bold">25+</p>
+                    <p class="uppercase text-sm">SALONES</p>
+                </div>
+            </div>
+        </div>
     </section>
+    <!-- ! Servicios End * -->
 
-    <!-- Sección de barberos -->
-    <main class="bg-cover bg-center py-24" style="
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-        ),
-        url(/assets/header2.webp);
-        ">
-        <article class="text-center container mx-auto">
-            <h2 class="text-5xl leading-[78px] text-white uppercase mb-12 font-bold">
-                Nuestro Equipo
-            </h2>
+    <!-- ! Sección de barberos -->
+    <section class="max-w-4xl mx-auto px-4 py-12 md:py-20 bg-gray-50">
+        <!-- Encabezado -->
+        <div class="barber-title text-center mb-12">
+            <h2 class="text-4xl uppercase tracking-wide mb-4">ELIGE AL MAESTRO</h2>
+            <div class="h-1 bg-black w-24 mx-auto"></div>
+        </div>
 
-            <div class="flex flex-col md:flex-row justify-between mb-12 px-4">
-                <!-- Barberos como artículos -->
-                <article class="text-center barbers mb-8 md:mb-0">
-                    <img src="assets/barbero3.png" alt="Barbero Juan" class="w-25 mb-4 mx-auto" loading="lazy" />
-                    <h3 class="text-gray-300 text-lg font-bold">Juan Pérez</h3>
-                    <p class="text-gray-400">Especialista en estilos clásicos</p>
-                </article>
+        <!-- Grid de barberos -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 barber-text">
+            <!-- Barber 1 -->
+            <article class="text-center space-y-4">
+                <div class="mx-auto w-32 h-32 overflow-hidden rounded-full border-4 border-gray-200">
+                    <img src="assets/juan.jpg" alt="Juan Pérez" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-2xl uppercase font-bold">JUAN PÉREZ</h3>
+                <p class="text-gray-600 uppercase text-sm tracking-wide">Especialista en estilos clásicos</p>
+                <button
+                    class="bg-black text-white px-8 py-2 uppercase text-sm tracking-wide hover:bg-gray-800 transition-colors">
+                    <a href="./buy/barber_select.html">Agendar</a>
+                </button>
+            </article>
 
-                <article class="text-center barbers mb-8 md:mb-0">
-                    <img src="assets/barbero.png" alt="Barbero Carlos" class="w-25 mb-4 mx-auto" loading="lazy" />
-                    <h3 class="text-gray-300 text-lg font-bold">Carlos Gómez</h3>
-                    <p class="text-gray-400">Maestro en técnicas modernas</p>
-                </article>
+            <!-- Barber 2 -->
+            <article class="text-center space-y-4">
+                <div class="mx-auto w-32 h-32 overflow-hidden rounded-full border-4 border-gray-200">
+                    <img src="assets/carlos.jpg" alt="Carlos Gómez" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-2xl uppercase font-bold">CARLOS GÓMEZ</h3>
+                <p class="text-gray-600 uppercase text-sm tracking-wide">Maestro en técnicas modernas</p>
+                <button
+                    class="bg-black text-white px-8 py-2 uppercase text-sm tracking-wide hover:bg-gray-800 transition-colors">
+                    <a href="./buy/barber_select.html">Agendar</a>
+                </button>
+            </article>
 
-                <article class="text-center barbers">
-                    <img src="assets/barbero4.png" alt="Barbero Miguel" class="w-25 mb-4 mx-auto" loading="lazy" />
-                    <h3 class="text-gray-300 text-lg font-bold">Miguel Rodríguez</h3>
-                    <p class="text-gray-400">Experto en diseño de barbas</p>
-                </article>
+            <!-- Barber 3 -->
+            <article class="text-center space-y-4">
+                <div class="mx-auto w-32 h-32 overflow-hidden rounded-full border-4 border-gray-200">
+                    <img src="assets/miguel.jpg" alt="Miguel Rodríguez" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-2xl uppercase font-bold">MIGUEL RODRÍGUEZ</h3>
+                <p class="text-gray-600 uppercase text-sm tracking-wide">Experto en diseño de barbas</p>
+                <button
+                    class="bg-black text-white px-8 py-2 uppercase text-sm tracking-wide hover:bg-gray-800 transition-colors">
+                    <a href="./buy/barber_select.html">Agendar</a>
+                </button>
+            </article>
+        </div>
+    </section>
+    <!-- ! Sección de barberos end -->
+
+    <!-- ! Formulario -->
+    <section class="max-w-4xl mx-auto px-4 py-12 md:py-20 bg-gray-50">
+        <!-- Encabezado -->
+        <div class="barber-title text-center mb-12">
+            <h2 class="text-4xl uppercase tracking-wide mb-4">CONTÁCTANOS</h2>
+            <div class="h-1 bg-black w-24 mx-auto"></div>
+        </div>
+
+        <!-- Formulario -->
+        <form id="contactForm" class="barber-text max-w-2xl mx-auto space-y-8">
+            <div>
+                <label class="block uppercase text-sm font-bold mb-2">NOMBRE COMPLETO</label>
+                <input type="text" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-black">
             </div>
 
-            <a href="buy/barber_select.html"
-                class="inline-block px-8 py-3 bg-orange-500 text-white uppercase hover:bg-gray-800">Agendar Cita</a>
-        </article>
-    </main>
+            <div>
+                <label class="block uppercase text-sm font-bold mb-2">NÚMERO DE TELÉFONO</label>
+                <input type="tel" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-black">
+            </div>
+
+            <div>
+                <label class="block uppercase text-sm font-bold mb-2">CORREO ELECTRÓNICO</label>
+                <input type="email" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-black">
+            </div>
+
+            <div>
+                <label class="block uppercase text-sm font-bold mb-2">MENSAJE</label>
+                <textarea required rows="4"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-none focus:outline-none focus:border-black"></textarea>
+            </div>
+
+            <button type="submit"
+                class="w-full bg-black text-white py-4 uppercase font-bold tracking-wide hover:bg-gray-800 transition-colors">
+                ENVIAR MENSAJE
+            </button>
+        </form>
+
+        <!-- Notificación Pop-up -->
+        <div id="successMessage" class="fixed top-16 right-4 bg-black text-white p-6 barber-text space-y-2 hidden">
+            <p class="uppercase font-bold">¡MENSAJE ENVIADO!</p>
+            <p class="text-sm">Nos pondremos en contacto contigo pronto.</p>
+        </div>
+
+        <!-- Pie de sección -->
+        <div class="barber-title text-center mt-16">
+            <p class="text-sm uppercase tracking-widest">GM STUDIO</p>
+            <p class="text-xs mt-2">MATTERING ST. KM. 45<br>FUNDADO EN 2002</p>
+        </div>
+    </section>
+    <!-- ! Formulario End -->
 
     <!-- Pie de página -->
     <footer class="bg-slate-200 py-16" id="contacto">
@@ -229,29 +237,34 @@
                 <h3 id="footer-servicios" class="text-lg font-bold mb-4">Servicios</h3>
                 <ul>
                     <li>
-                        <a href="#servicios" class="hover:text-slate-950 transition-colors duration-300 block mb-2">Cortes</a>
+                        <a href="#servicios"
+                            class="hover:text-slate-950 transition-colors duration-300 block mb-2">Cortes</a>
                     </li>
                     <li>
-                        <a href="#servicios" class="hover:text-slate-950 transition-colors duration-300 block mb-2">Afeitados</a>
+                        <a href="#servicios"
+                            class="hover:text-slate-950 transition-colors duration-300 block mb-2">Afeitados</a>
                     </li>
                     <li>
-                        <a href="#servicios" class="hover:text-slate-950 transition-colors duration-300 block">Tratamientos</a>
+                        <a href="#servicios"
+                            class="hover:text-slate-950 transition-colors duration-300 block">Tratamientos</a>
                     </li>
                 </ul>
             </section>
-    
+
             <!-- Información de Contacto -->
             <section aria-labelledby="footer-contacto">
                 <h3 id="footer-contacto" class="text-lg font-bold mb-4">Contacto</h3>
                 <address class="not-italic">
                     <ul>
                         <li>
-                            <a href="tel:1234567890" class="hover:text-slate-950 transition-colors duration-300 block mb-2">
+                            <a href="tel:1234567890"
+                                class="hover:text-slate-950 transition-colors duration-300 block mb-2">
                                 Teléfono: (123) 456-7890
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:info@brberiaxyz.com" class="hover:text-slate-950 transition-colors duration-300 block mb-2">
+                            <a href="mailto:info@brberiaxyz.com"
+                                class="hover:text-slate-950 transition-colors duration-300 block mb-2">
                                 Email: info@barberia.com
                             </a>
                         </li>
@@ -261,7 +274,7 @@
                     </ul>
                 </address>
             </section>
-    
+
             <!-- Redes Sociales -->
             <section aria-labelledby="footer-redes" class="footer__redes">
                 <h3 id="footer-redes" class="text-lg font-bold mb-4">Redes Sociales</h3>
@@ -279,7 +292,7 @@
                 </ul>
             </section>
         </div>
-    
+
         <!-- Línea divisoria y derechos reservados -->
         <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
             <p>&copy; 2025 Barbería EliteCuts. Todos los derechos reservados.</p>

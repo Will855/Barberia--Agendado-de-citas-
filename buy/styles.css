@@ -1,140 +1,47 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 15px;
+/* ** barber_select */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;600&display=swap');
+
+.gm-font {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.1rem;
 }
 
-.container {
-    max-width: 100%;
-    margin: auto;
-    background: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.secondary-font {
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
-.card {
-    padding: 8px;
-    margin-bottom: 12px;
-}
-
+.barber-card,
 .time-slot {
-    padding: 12px !important;
-    font-size: 0.9rem;
-}
-
-#time-selection {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-@media (max-width: 460px) {
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.2rem; }
-    
-    .card {
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-    }
-
-    input, select {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
-
-    button {
-        padding: 12px;
-        font-size: 0.95rem;
-    }
-
-    #mobileMenu {
-        width: 100vw;
-    }
-
-    .grid-responsive {
-        gap: 0.8rem;
-    }
-}
-
-@media (max-width: 360px) {
-    #time-selection {
-        grid-template-columns: 1fr;
-    }
-    
-    .time-slot {
-        padding: 10px !important;
-    }
-}
-
-/* estilos de el dialogo de confirmacion */
-
-.animate-slide-in {
-    animation: slide-in 0.5s forwards;
-}
-.animate-slide-out {
-    animation: slide-out 0.5s forwards;
-}
-@keyframes slide-in {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-@keyframes slide-out {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-}
-
-/* Estilos del calendario */
-
-.time-slot.selected {
-    background-color: #5cb85c; /* Color verde al seleccionar */
-    color: white; /* Cambia el color del texto */
-}
-
-/* Estilos para el formulario */
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #5cb85c;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    width: 100%;
 }
 
-button:hover {
-    background-color: #4cae4c;
+.selected {
+    padding: 5% 0 5% 0;
+    border-color: #B8860B !important;
+    background: rgba(184, 134, 11, 0.1) !important;
 }
 
-/* Responsividad */
-@media (max-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-    }
+#confirmationModal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
+
+/* Añadir en el style de index.html */
+.cut-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* ** barber_select end */
+
+/* ** pay_confirm */
+.payment-bg {
+    background: linear-gradient(rgba(23, 23, 23, 0.9), rgba(23, 23, 23, 0.9)),
+        url('assets/barber-bg.jpg') center/cover;
+    min-height: 100vh;
+}
+
+.gold-border {
+    border-color: #B8860B;
+}
+/* ** pay_confirm end */

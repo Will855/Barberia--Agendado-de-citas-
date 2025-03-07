@@ -8,7 +8,7 @@ class Appointment {
     constructor(barber, cut, time, price, userName, userPhone) {
         this.barber = barber;
         this.cut = cut;
-        this.time = `${time}:00`;
+        this.time = `${time > 12 ? time - 12 : time}:00 PM`;
         this.price = price;
         this.userName = userName;
         this.userPhone = userPhone;
@@ -40,9 +40,11 @@ function selectCut(cutName, cutPrice) {
     updateAppointmentDetails();
 }
 
+// Modificar en agenderApp.js la función selectTime
 function selectTime(hour) {
     document.querySelectorAll('.time-slot').forEach(slot => {
-        slot.classList.toggle('selected', slot.innerText === `${hour}:00`);
+        const displayHour = hour > 12 ? hour - 12 : hour;
+        slot.classList.toggle('selected', slot.innerText === `${displayHour}:00 PM`);
     });
     selectedTime = hour;
     updateAppointmentDetails();
@@ -58,6 +60,8 @@ function updateAppointmentDetails() {
         const userPhone = document.getElementById('phone').value.trim();
         appointmentDetails = new Appointment(selectedBarber, selectedCut, selectedTime, price, userName, userPhone);
         displayTotal();
+    } else {
+        document.getElementById('total-display').textContent = ""; // Limpiar si falta algo
     }
 }
 
@@ -82,16 +86,18 @@ document.getElementById('sendForm').addEventListener('click', (e) => {
     localStorage.setItem('appointmentDetails', JSON.stringify(appointmentDetails));
 
     if (paymentMethod === 'movil') {
-        window.location.href = '../buy/pay_confirm.html';
+        window.location.href = 'pay_confirm.html';
     } else {
-        showFeedback('✅ Cita agendada exitosamente');
-        setTimeout(() => window.location.href = './index.html', 1500);
+        showModal(); // Solo mostrar modal para efectivo
     }
 });
-
 function showFeedback(message) {
     const feedback = document.getElementById('selection-message');
     feedback.textContent = message;
     feedback.classList.remove('hidden');
     setTimeout(() => feedback.classList.add('hidden'), 3000);
 }
+
+// Actualizar resumen al escribir en los campos
+document.getElementById('name').addEventListener('input', updateAppointmentDetails);
+document.getElementById('phone').addEventListener('input', updateAppointmentDetails);
