@@ -101,3 +101,17 @@
 }
 
 /* ** Formulario End */
+
+@media (max-width: 350px) {
+    body {
+        width: 345px;
+        /* Fija el ancho */
+        /* overflow-x: scroll; */
+        /* Scroll horizontal forzado */
+    }
+
+    /* Si usas viewport meta, ajustarlo */
+    head meta[name="viewport"] {
+        content: "width=350, user-scalable=no";
+    }
+}
